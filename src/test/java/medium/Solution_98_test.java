@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import static org.junit.Assert.*;
+
 public class Solution_98_test {
 
     @Test
@@ -19,16 +21,20 @@ public class Solution_98_test {
         Solution_98 solution = new Solution_98();
         for (TreeNode treeNode : treeNodes) {
             if (treeNode.val == 2) {
-                assert solution.isValidBST(treeNode);
+                System.out.println("***********");
+                assertTrue(solution.isValidBST(treeNode));
             }
             if (treeNode.val == 5) {
-                assert !solution.isValidBST(treeNode);
+                System.out.println("***********");
+                assertFalse(solution.isValidBST(treeNode));
             }
             if (treeNode.val == 1) {
-                assert !solution.isValidBST(treeNode);
+                System.out.println("***********");
+                assertFalse(solution.isValidBST(treeNode));
             }
             if (treeNode.val == 10) {
-                assert !solution.isValidBST(treeNode);
+                System.out.println("***********");
+                assertTrue(solution.isValidBST(treeNode));
             }
         }
     }

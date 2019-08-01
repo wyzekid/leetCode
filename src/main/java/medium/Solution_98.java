@@ -8,6 +8,8 @@ public class Solution_98 {
 
     public boolean isValidBST(TreeNode root) {
 
+        System.out.println(root);
+
         if (root == null) {
             return true;
         }
@@ -20,7 +22,8 @@ public class Solution_98 {
             if (!(root.left.val < root.val && root.right.val > root.val)) {
                 return false;
             }
-            return isValidBST(root.left) && isValidBST(root.right);
+            return isValidBST(root.left) &&
+                    isValidBST(root.right);
         } else if (root.left == null) {
             if (root.right != null) {
                 if (root.right.val <= root.val) {
@@ -50,5 +53,15 @@ class TreeNode {
 
     TreeNode(int x) {
         val = x;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("TreeNode{")
+                .append("val = ").append(val)
+                .append(" left = ").append(left != null ? left.val : "null")
+                .append(" right = ").append(right != null ? right.val: "null")
+                .append("}");
+        return result.toString();
     }
 }
