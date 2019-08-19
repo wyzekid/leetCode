@@ -38,7 +38,7 @@ public class Solution {
         int leftIndex = middleIndex;
         int rightIndex = middleIndex;
         int resultIndex = 0;
-        while (leftIndex >= 0 || rightIndex <= MAX_INDEX) {
+        while ((leftIndex >= 0 || rightIndex <= MAX_INDEX) && resultIndex <= MAX_INDEX) {
             if (resultIndex == 0) {
                 result[resultIndex] = powSqr(A[middleIndex]);
                 resultIndex++;
@@ -57,17 +57,12 @@ public class Solution {
                 resultIndex++;
                 continue;
             } else {
-                if (Math.abs(A[leftIndex]) < Math.abs(A[rightIndex])) {
+                if (Math.abs(A[leftIndex]) <= Math.abs(A[rightIndex])) {
                     result[resultIndex] = powSqr(A[leftIndex]);
+                    result[++resultIndex] = powSqr(A[rightIndex]);
                 } else if (Math.abs(A[leftIndex]) > Math.abs(A[rightIndex])) {
                     result[resultIndex] = powSqr(A[rightIndex]);
-                } else if (Math.abs(A[leftIndex]) == Math.abs(A[rightIndex])) {
-                    result[resultIndex] = powSqr(A[leftIndex]);
-                    resultIndex++;
-                    result[resultIndex] = powSqr(A[rightIndex]);
-                    leftIndex--;
-                    rightIndex++;
-                    continue;
+                    result[++resultIndex] = powSqr(A[leftIndex]);
                 }
             }
             resultIndex++;
