@@ -1,5 +1,9 @@
 package companies.tinkoff;
 
+/**
+ * Given an array of sorted ascending integers
+ * The task is to get sorted array of this integers squares
+ */
 public class Solution {
     public int[] sortedSquares(int[] A) {
         int[] result = new int[A.length];
