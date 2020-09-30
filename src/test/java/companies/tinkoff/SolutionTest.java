@@ -1,9 +1,8 @@
 package companies.tinkoff;
 
 import org.junit.Test;
-import org.junit.runners.JUnit4;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class SolutionTest {
 
@@ -18,6 +17,7 @@ public class SolutionTest {
         int[] input_6 = {-5, -3, -2, 5, 8};
         int[] input_7 = {-10, -3, 1, 3, 10};
 
+        int[] expected_1 = {};
         int[] expected_2 = {9};
         int[] expected_3 = {1, 4, 9};
         int[] expected_4 = {0, 4, 25, 100};
@@ -25,7 +25,7 @@ public class SolutionTest {
         int[] expected_6 = {4, 9, 25, 25, 64};
         int[] expected_7 = {1, 9, 9, 100, 100};
 
-        assertArrayEquals(input_1, solution.sortedSquares(input_1));
+        assertArrayEquals(expected_1, solution.sortedSquares(input_1));
         assertArrayEquals(expected_2, solution.sortedSquares(input_2));
         assertArrayEquals(expected_3, solution.sortedSquares(input_3));
         assertArrayEquals(expected_4, solution.sortedSquares(input_4));
