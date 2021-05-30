@@ -60,20 +60,20 @@ public class ETask {
     }
 
     private static void cleanPool(UserRequest request) {
+        if ((request.getRequestTime() - 1) % durationMs == 0) {
             connectionsPool.removeIf(connection -> {
                 if (Math.abs(request.getRequestTime() - connection.getRequestTime()) >= durationMs) {
                     Integer userConnectionsCount = userCountConnectionsMap.get(connection.getUserId());
                     if (userConnectionsCount != null && userConnectionsCount > 0) {
                         userCountConnectionsMap.put(connection.getUserId(), --userConnectionsCount);
+                    } else if (userConnectionsCount != null && userConnectionsCount == 0) {
+                        userCountConnectionsMap.remove(connection.getUserId(), 0);
                     }
-//                    else if (userConnectionsCount != null && userConnectionsCount == 0) {
-//                        userCountConnectionsMap.remove(connection.getUserId(), 0);
-//                    }
                     return true;
                 }
                 return false;
             });
-
+        }
     }
 
     private static class UserRequest {
