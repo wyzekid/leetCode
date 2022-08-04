@@ -1,4 +1,4 @@
-package companies.yandex.yandex.contest.DTask;
+package companies.yandex.contest.DTask;
 
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;

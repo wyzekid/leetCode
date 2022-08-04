@@ -1,4 +1,4 @@
-package companies.yandex.yandex.contest.ETask;
+package companies.yandex.contest.ETask;
 
 import java.io.BufferedReader;
 import java.io.IOException;

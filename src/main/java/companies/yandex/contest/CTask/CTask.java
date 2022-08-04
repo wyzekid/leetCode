@@ -1,4 +1,4 @@
-package companies.yandex.yandex.contest.CTask;
+package companies.yandex.contest.CTask;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
